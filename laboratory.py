@@ -26,7 +26,7 @@ for i in range(len(a)):
 
             dep = "Nariño" 
 
-        a[i][j] = int(input("Ingrese la temperatura del departamento "+ str(dep)+":")) 
+        a[i][j] = (random.randint(18,28))
 
  
  
@@ -40,7 +40,7 @@ tempSan = 0
 
 tempGua = 0 
 
-tempNar = 0 
+tempNar = 0
 
  
  
@@ -57,7 +57,7 @@ for i in range(3):
 
             tempGua += a[i][j] 
 
-        else: 
+        elif(i==2): 
 
             tempNar += a[i][j] 
 
@@ -78,4 +78,4 @@ print("Promedio de la temperatura de santander: "+str(promSan)+"\n",
 
       "Promedio de la temperatura de Nariño: "+str(promNar)+"\n", 
 
-      "Promedio de la temperratura Nacional: "+str(promNac)) 
+      "Promedio de la temperatura Nacional: "+str(promNac)) 
