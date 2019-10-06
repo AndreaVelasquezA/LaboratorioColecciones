@@ -44,6 +44,21 @@ print("la temperatura mayor en Santander :",(np.max(s)))
 print("la temperatura mayor en Guajira:",(np.max(g)))
 print("la temperatura mayor en Nariño:",(np.max(n)))
 
+if(s_1>s_2 and s_1>s_3):
+    print("la mayor temperatura en el año se presento en Santander, siendo esta : ",s_1)
+elif(s_1==s_2 and s_1==s_3):
+    print("la mayor temperatura en el año se presento en todos los departamentos, siendo esta: ",s_1)
+elif(s_2>s_1 and s_2>s_3):
+    print("la mayor temperatura en el año se presento en la Guajira, siendo esta: ",s_2)
+elif(s_1==s_2):
+    print("la mayor temperatura en el año se presento tanto en Santander como en la Guajira, siendo esta: ", s_1)
+elif(s_3>s_1 and s_3>s_2):
+    print("la mayor temperatura en el año se presento en Nariño, siendo esta: ",s_3)
+elif(s_1==s_3):
+    print("la mayor temperatura en el año se presento tanto en Santander como en Nariño, siendo esta: ",s_1)
+elif(s_2==s_3):
+    print("la mayor temperatura en el año se presento tanto en la Guajira como en Nariño, siendo esta: ",s_2)
+
 np_array = np.array((s))
 posicion_santan = (np.where(np.max(np_array)== np_array))
 print("numero del mes en que la temperatura fue maxima en Santander: ",posicion_santan)
@@ -71,7 +86,7 @@ print("total de la suma de los meses en los que la temperatura fue maxima en la 
 
 d = int(input("digite la cantidad de meses en los que la temperatura fue maxima en Nariño:"))
 nd = s_3*d
-print("total de la suma de los meses en los que la temperatura fue maxima en Nariño ",nd)
+print("total de la suma de los meses en los que la temperatura fue maxima en Nariño: ",nd)
 
 
 temp_max_prom = (sb+gc+nd)/3
@@ -84,7 +99,7 @@ elif(sb == gc and sb == nd):
         print("todos tienen el mismo promedio ")
 elif(gc > sb and gc > nd):
   print("El promedio mayor es el de la Guajira " + str(gc))
-elif(sb == gc ):
+elif(sb > nd and sb==gc ):
          print("Santander y Guajira tienen los promedios mas altos ")  
 elif(nd > sb and nd>gc):
   print("El promedio mayor es el de Nariño " + str(nd))
@@ -93,6 +108,56 @@ elif(sb==nd):
 elif(gc == nd):
         print("Guajira y Nariño tienen los promedios mas altos")
  
+#contadores
+
+
+
+tempSan = 0 
+
+tempGua = 0 
+
+tempNar = 0
+
+ 
+ 
+
+for i in range(3): 
+
+    for j in range(12): 
+
+        if(i==0): 
+
+            tempSan += a[i][j] 
+
+        if(i==1): 
+
+            tempGua += a[i][j] 
+
+        elif(i==2): 
+
+            tempNar += a[i][j] 
+
+
+
+promSan = tempSan/12 
+
+promGua = tempGua/12 
+
+promNar = tempNar/12 
+
+promNac = (promSan+promGua+promNar)/3 
+
+
+
+print("Promedio de la temperatura de santander: "+str(promSan)+"\n", 
+
+      "Promedio de la temperatura de Guajira: "+str(promGua)+"\n", 
+
+      "Promedio de la temperatura de Nariño: "+str(promNar)+"\n", 
+
+      "Promedio de la temperatura Nacional: "+str(promNac)) 
+
+
 
 
 

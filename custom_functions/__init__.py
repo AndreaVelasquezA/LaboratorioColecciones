@@ -150,3 +150,4 @@ print("Promedio de la temperatura de santander: "+str(promSan)+"\n",
       "Promedio de la temperatura de Nariño: "+str(promNar)+"\n", 
 
       "Promedio de la temperatura Nacional: "+str(promNac)) 
+
