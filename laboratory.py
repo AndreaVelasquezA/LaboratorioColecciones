@@ -5,11 +5,10 @@ import random
  
  
 
-a= np.zeros((3,12)) 
+a= np.zeros((3,12))
 
  
  
-
 for i in range(len(a)): 
 
     for j in range(len(a[i])): 
@@ -28,14 +27,19 @@ for i in range(len(a)):
 
         a[i][j] = (random.randint(18,28))
 
- 
+#para observar la matriz 
 print(a)
+
+#para "separar" la matriz como "listas"
+
 s = a[[0,], :]
 g = a[[1,], :]
 n = a[[2,], :]
 print("santander: ",s)
 print("Guajira: ",g)
 print("Nariño: ",n)
+
+#para hallar la temperatura mas alta por departamento
 
 s_1=(np.max(s))
 s_2=(np.max(g))
@@ -44,6 +48,8 @@ print("la temperatura mayor en Santander :",(np.max(s)))
 print("la temperatura mayor en Guajira:",(np.max(g)))
 print("la temperatura mayor en Nariño:",(np.max(n)))
 
+
+#para hallar la mayor temperatura del año
 if(s_1>s_2 and s_1>s_3):
     print("la mayor temperatura en el año se presento en Santander, siendo esta : ",s_1)
 elif(s_1==s_2 and s_1==s_3):
@@ -59,6 +65,9 @@ elif(s_1==s_3):
 elif(s_2==s_3):
     print("la mayor temperatura en el año se presento tanto en la Guajira como en Nariño, siendo esta: ",s_2)
 
+
+#para hallar la posicion de las temperaturas en cada departamento
+
 np_array = np.array((s))
 posicion_santan = (np.where(np.max(np_array)== np_array))
 print("numero del mes en que la temperatura fue maxima en Santander: ",posicion_santan)
@@ -71,10 +80,16 @@ np_array = np.array((n))
 posicion_nariño = (np.where(np.max(np_array)== np_array))
 print("numero del mes en que la temperatura fue maxima en Nariño: ",posicion_nariño)
 
+
+#diccionario para saber el mes por posicion
+
 meses = {"0":"enero","1":"febrero","2":"marzo","3":"abril",
          "4":"mayo","5":"junio","6":"julio","7":"agosto",
          "8":"septiembre","9":"octubre","10":"noviembre","11":"diciembre"}
 print(meses)
+
+
+#entrada para saber si hubo mas de 1 mes con maxima temperatura
 
 b = int(input("digite la cantidad de meses en los que la temperatura fue maxima en Santander:"))
 sb = s_1*b
@@ -88,6 +103,7 @@ d = int(input("digite la cantidad de meses en los que la temperatura fue maxima 
 nd = s_3*d
 print("total de la suma de los meses en los que la temperatura fue maxima en Nariño: ",nd)
 
+#para sacar el promededio de los meses mas calientes de los 3 departamentos
 
 temp_max_prom = (sb+gc+nd)/3
 print("promedio de los meses mas calientes de los 3 departamentos: ",temp_max_prom)
